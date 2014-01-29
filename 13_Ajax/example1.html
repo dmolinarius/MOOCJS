@@ -60,6 +60,7 @@ var current_li = null
       request = new XMLHttpRequest();
       request.onload = function() {
         dropzone.innerHTML = this.responseText;
+        console.log(this.status);
       };
       request.onerror = function(e) {
         dropzone.innerHTML = 'Erreur de transmission...';
