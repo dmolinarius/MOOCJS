@@ -1,0 +1,32 @@
+
+<ul id="example1" style="float: left">
+ <li id="li-HTML">HTML
+ <li id="li-CSS">CSS
+ <li id="li-Javascript">Javascript
+ <li id="li-DOM">DOM
+ <li id="li-XMLHttpRequest">XMLHttpRequest
+</ul>
+
+<script>
+var current_li = null,
+  , li_listener = function (e) {
+    var request;
+    if ( e.target !== current_li ) {
+      current_li = e.target;
+      request = new XMLHttpRequest();
+      request.onload = function() {
+        console.log(this.responseText);
+      };
+      request.onerror = function(e) {
+        console.log('an error occured');
+      };
+
+      request.open("GET", "../index.html", true);
+      request.send();
+    }
+  }
+;
+Array.prototype.slice.call(document.querySelectorAll("#example1 li")).forEach( function(li) {
+  li.addEventListener('mouseover', li_listener);
+});
+</script>
