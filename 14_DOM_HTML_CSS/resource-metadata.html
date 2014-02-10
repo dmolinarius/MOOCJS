@@ -41,15 +41,19 @@ hr {
 <p id="p1">Les informations suivantes on été renseignées par programme :
 
 <pre id="p2"></pre>
+<div><a href="#">[recharger]</a></div>
 
 <p>Le code javascript de cette page :
 
 <pre id="js_drop"></pre> 
 
-<script class="show">p2.textContent += 'URL = '+document.URL+"\n";
-p2.textContent += 'location = '+document.location+"\n";
-p2.textContent += 'referrer = '+document.referrer+"\n";
-p2.textContent += 'domain = '+document.domain+"\n";
+<script class="show">p2.textContent += 'URL = "'+document.URL+"\"\n";
+p2.textContent += 'location = "'+document.location+"\"\n";
+p2.textContent += 'referrer = "'+document.referrer+"\"\n";
+p2.textContent += 'domain = "'+document.domain+"\"\n";
+p2.textContent += 'lastModified = "'+document.lastModified+"\"\n";
+p2.textContent += 'cookie = "'+document.cookie+"\"\n";
+
 </script>
 <script>
   // affichage du code source du script
