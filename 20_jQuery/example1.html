@@ -54,34 +54,12 @@ ul li {
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
 
 <script>
-var current_li = null
-  , li_listener = function (e) {
-    current_li = e.target.id;
-    console.log("example1_"+current_li.substring(3)+".html");
-    $.ajax({
-      url: "example1_"+current_li.substring(3)+".html",
-      success: function(data) {
-        $('#dropzone').html(data);
-      }
-    });
-    /*var request;
-    if ( e.target !== current_li ) {
-      current_li = e.target;
-      request = new XMLHttpRequest();
-      request.onload = function() {
-        dropzone.innerHTML = this.responseText;
-        console.log(this.status);
-      };
-      request.onerror = function(e) {
-        dropzone.innerHTML = 'Erreur de transmission...';
-      };
-      console.log("example1_"+current_li.id.substring(3)+".html");
-      request.open("GET", "example1_"+current_li.id.substring(3)+".html", true);
-      request.send();
-    } */
-  }
-;
-
-$("#example1 li").on('mouseover', li_listener);
-
+$("#example1 li").on('mouseover', function (e) {
+  $.ajax({
+    url: "example1_"+e.target.id.substring(3)+".html",
+    success: function(data) {
+      $('#dropzone').html(data);
+    }
+  });
+};
 </script>
