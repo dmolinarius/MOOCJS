@@ -56,7 +56,7 @@ ul li {
 <script>
 $("#example1 li").on('mouseover', function (e) {
   $.ajax({
-    url: "example1_"+e.target.id.substring(3)+".html",
+    url: "example1_"+$(this).attr('id').substring(3)+".html",
     success: function(data) {
       $('#dropzone').html(data);
     }
