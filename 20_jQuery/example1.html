@@ -54,7 +54,7 @@ ul li {
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
 
 <script>
-$("#example1 li").on('mouseover', function (e) {
+$("#example1 li").on('mouseover', function() {
   $.ajax({
     url: "example1_"+$(this).attr('id').substring(3)+".html",
     success: function(data) {
